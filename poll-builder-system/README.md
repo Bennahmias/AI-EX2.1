@@ -1,8 +1,8 @@
 # PollBuilder System
 
 ## Author
-- **Name**: [Your Name]
-- **ID Number**: [Your ID Number]
+- **Name**: BEN NAHMIAS
+- **ID Number**: 207192295
 
 ## Summary
 The PollBuilder System is an in-memory polling application that allows users to:
