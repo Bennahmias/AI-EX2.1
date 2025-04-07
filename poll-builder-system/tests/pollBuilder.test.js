@@ -21,15 +21,15 @@ describe('PollBuilder', () => {
       results: options.map(option => ({ option, votes: 0 })),
     });
   });
-  test('should throw an error when creating a poll with an empty question', () => {
-    expect(() => pollBuilder.createPoll('', ['Option 1', 'Option 2'])).toThrow('Invalid question');
+    test('should throw an error when creating a poll with an empty question', () => {
+    expect(() => pollBuilder.createPoll('', ['Option 1', 'Option 2'])).toThrow('Invalid question or options');
   });
 
-  test('should throw an error when creating a poll with invalid options', () => {
-    expect(() => pollBuilder.createPoll('Question?', [])).toThrow('Invalid options');
+    test('should throw an error when creating a poll with invalid options', () => {
+    expect(() => pollBuilder.createPoll('Question?', [])).toThrow('Invalid question or options');
   });
 
-  test('should throw an error when creating a poll with duplicate question', () => {
+    test('should throw an error when creating a poll with duplicate question', () => {
     pollBuilder.createPoll('Question?', ['Option 1', 'Option 2']);
     expect(() => pollBuilder.createPoll('Question?', ['Option 3', 'Option 4'])).toThrow('Poll with this question already exists');
   });
@@ -77,7 +77,7 @@ describe('PollBuilder', () => {
   test('should throw an error when creating a poll with only one option', () => {
     const question = 'Do you like programming?';
     const options = ['Yes'];
-    expect(() => pollBuilder.createPoll(question, options)).toThrow('Invalid options');
+    expect(() => pollBuilder.createPoll(question, options)).toThrow('Invalid question or options');
   });
   test('should handle multiple votes correctly', () => {
     const question = 'Favorite season?';
